@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Dark table -->
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card bg-default shadow">
+        <div class="card-header bg-transparent border-0">
+          <h3 class="text-white mb-0">Rooms</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-dark table-flush">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Room Number</th>
+                <th scope="col">Type</th>
+                <th scope="col">Price</th>
+                <th scope="col">Booked</th>
+                <!-- <th scope="col">Users</th>
+                <th scope="col">Completion</th> -->
+                <!-- <th scope="col"></th> -->
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let room of rooms">
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <div class="media-body">
+                      <span class="mb-0 text-sm">{{room.number}}</span>
+                    </div>
+                  </div>
+                </th>
+                <td>
+                  {{room.type}} Room
+                </td>
+                <td>
+                  {{room.price}}
+                </td>
+                <td>
+                  {{room.booked ? 'Yes': 'No'}}
+                </td>
+                <!-- <td>
+                    <div class="text-center">
+                      <button (click)="viewBookings(room.id)" type="button" class="btn btn-primary my-4">View Bookings</button>
+                    </div>
+                </td> -->
+                <td>
+                    <div class="text-center">
+                      <button (click)="bookRoom(room.id)" type="button" class="btn btn-primary my-4">Book</button>
+                    </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

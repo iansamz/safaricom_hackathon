@@ -1,0 +1,67 @@
+<app-header></app-header>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Dark table -->
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card bg-default shadow">
+        <div class="card-header bg-transparent border-0">
+          <h3 class="text-white mb-0">Rooms</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-dark table-flush">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Room Number</th>
+                <th scope="col">Room Type</th>
+                <th scope="col">Room Price</th>
+                <th scope="col">Client</th>
+                <th scope="col">Huduma Number</th>
+                <th scope="col">Date Booked</th>
+                <th scope="col">Date Checkout</th>
+                <!-- <th scope="col">Completion</th> -->
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let booking of bookings">
+                  <th scope="row">
+                    <div class="media align-items-center">
+                      <div class="media-body">
+                        <span class="mb-0 text-sm">{{booking.roomNumber}}</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td>
+                    {{booking.type}}
+                  </td>
+                  <td>
+                    {{booking.price}}
+                  </td>
+                  <td>
+                    {{booking.client_name}}
+                  </td>
+                  <td>
+                    {{booking.client_huduma_number}}
+                  </td>
+                  <td>
+                    {{booking.check_in_date}}
+                  </td>
+                  <td>
+                    {{booking.check_out_date}}
+                  </td>
+                  <td>
+                      <div class="text-center">
+                        <button (click)="cancelBooking(booking)" type="button" class="btn btn-primary my-4">Cancel</button>
+                      </div>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
